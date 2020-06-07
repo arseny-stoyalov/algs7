@@ -9,6 +9,7 @@ public class AStarFinder implements PathFinder {
     @Override
     public List<Cell> findPath(Cell start, Cell end, Map<Cell, Integer> graph) {
 
+        long timeStart = System.nanoTime();
         Map<Cell, Cell> cameFrom = new HashMap<>();
         cameFrom.put(start, null);
         graph.put(start, 0);
@@ -38,6 +39,8 @@ public class AStarFinder implements PathFinder {
             current = cameFrom.get(current);
         }
 
+        long timeEnd = System.nanoTime();
+        System.out.println("Time taken: " + (timeEnd - timeStart));
         return path;
     }
 

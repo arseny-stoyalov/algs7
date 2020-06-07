@@ -188,7 +188,7 @@ public class App {
             default:
                 return;
         }
-        App app = new App(10, 700, finder);
+        App app = new App(20, 700, finder);
         app.start();
     }
 }
